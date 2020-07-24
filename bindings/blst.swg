@@ -82,6 +82,11 @@
 %apply (char *STRING, size_t LENGTH) { (const byte *info, size_t info_len) };
 %apply const char * { const byte in[ANY] };
 
+%include "arrays_java.i";
+%include "stdint.i"
+
+%apply signed char[ANY] { unsigned char[ANY] };
+
 %include "blst.h"
 %include "blst_aux.h"
 %extend blst_pairing {

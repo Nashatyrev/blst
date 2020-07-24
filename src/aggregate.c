@@ -260,10 +260,10 @@ BLST_ERROR blst_pairing_mul_n_aggregate_pk_in_g2(PAIRING *ctx,
                                                  const POINTonE2_affine *PK,
                                                  const POINTonE1_affine *sig,
                                                  const POINTonE1_affine *hash,
-                                                 const limb_t *scalar,
+                                                 const limb_t scalar,
                                                  size_t nbits)
 {   return PAIRING_Mul_n_Aggregate_PK_in_G2(ctx, PK, sig, hash,
-                                            scalar, nbits);   }
+                                            &scalar, nbits);   }
 
 static BLST_ERROR PAIRING_Mul_n_Aggregate_PK_in_G1(PAIRING *ctx,
                                                    const POINTonE1_affine *PK,
@@ -328,10 +328,10 @@ BLST_ERROR blst_pairing_mul_n_aggregate_pk_in_g1(PAIRING *ctx,
                                                  const POINTonE1_affine *PK,
                                                  const POINTonE2_affine *sig,
                                                  const POINTonE2_affine *hash,
-                                                 const limb_t *scalar,
+                                                 const limb_t scalar,
                                                  size_t nbits)
 {   return PAIRING_Mul_n_Aggregate_PK_in_G1(ctx, PK, sig, hash,
-                                            scalar, nbits);   }
+                                            &scalar, nbits);   }
 
 static void PAIRING_Commit(PAIRING *ctx)
 {

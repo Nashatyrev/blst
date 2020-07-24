@@ -37,9 +37,9 @@ while [ "x$1" != "x" ]; do
     shift
 done
 
-if ${CC} ${CFLAGS} -dM -E -x c /dev/null | grep __AVX__ > /dev/null; then
-    CFLAGS="${CFLAGS} -mno-avx"
-fi
+# if ${CC} ${CFLAGS} -dM -E -x c /dev/null | grep __AVX__ > /dev/null; then
+#    CFLAGS="${CFLAGS} -mno-avx"
+# fi
 
 rm -f libblst.a
 trap '[ $? -ne 0 ] && rm -f libblst.a; rm -f *.o' 0
